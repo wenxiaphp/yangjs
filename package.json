@@ -2,7 +2,12 @@
   "name": "yangjs",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
+    "start": "superstatic dist --port $LEANCLOUD_APP_PORT",
+    "postinstall": "npm run build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
