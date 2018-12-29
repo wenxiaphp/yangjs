@@ -8,16 +8,15 @@
     "up": "lean up --port 3300",
     "fix": "eslint --fix ./",
     "lint": "eslint lint ./",
-    "start": "node server.js",
-    "dev": "nodemon server.js -- "
+    "start": "node server.js && yarn build-client",
+    "dev": "nodemon server.js -- ",
+    "build-client": "cd ./client && yarn install"
   },
   "dependencies": {
-    "ejs": "^2.5.6",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",
-    "koa-views": "^6.0.2",
     "leancloud-storage": "^3.0.2",
     "leanengine": "^3.0.0"
   },

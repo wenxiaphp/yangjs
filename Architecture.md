@@ -46,6 +46,8 @@
 
 参考：[基于 vue cli 3 的微信公众号前端架构](http://t.cn/EbXMd8G)。构建好之后全部代码放在 `/client` 目录下。
 
+> 注意：`@vue/airbnb` 插件使用 `airbnb-base` 代替
+
 ## 三、集成部署
 
 ### 删除服务端渲染相关文件及配置
@@ -74,3 +76,8 @@ module.exports = router
 // 可以将一类的路由单独保存在一个文件中
 app.use(require('./routes/hello-world').routes())
 ```
+
+### 配置融合
+
+- `/leanengine.yml`：云引擎配置文件
+- 合并客户端与服务端的 `/.gitignore` 文件
