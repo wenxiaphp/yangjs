@@ -6,7 +6,7 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "superstatic ./dist --port $LEANCLOUD_APP_PORT",
+    "start": "superstatic ./dist --port $LEANCLOUD_APP_PORT --host 0.0.0.0",
     "local-start": "superstatic ./dist --port 8081 --host 127.0.0.1",
     "postinstall": "npm run build",
     "serve": "vue-cli-service serve",
