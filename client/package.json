@@ -6,7 +6,6 @@
     "node": "8.x"
   },
   "scripts": {
-    "local-start": "superstatic ./dist --port 8081 --host 127.0.0.1",
     "postinstall": "yarn build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -35,7 +34,6 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "postcss-pxtorem": "^4.0.1",
-    "vue-template-compiler": "^2.5.17",
-    "superstatic": "^6.0.4"
+    "vue-template-compiler": "^2.5.17"
   }
 }
