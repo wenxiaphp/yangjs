@@ -3,7 +3,6 @@ const path = require('path')
 const AV = require('leanengine')
 const Koa = require('koa')
 const Router = require('koa-router')
-const views = require('koa-views')
 const statics = require('koa-static')
 const bodyParser = require('koa-bodyparser')
 
@@ -11,27 +10,19 @@ const bodyParser = require('koa-bodyparser')
 require('./cloud')
 
 const app = new Koa()
+const router = new Router()
 
-// 设置模版引擎
-app.use(views(path.join(__dirname, 'views')))
+app.use(AV.Cloud.CookieSession({ framework: 'koa', secret: 'my secret', maxAge: 3600000, fetchUser: true }))
 
 // 设置静态资源目录
 app.use(statics(path.join(__dirname, '../client/dist')))
-
-const router = new Router()
-app.use(router.routes())
 
 // 加载云引擎中间件
 app.use(AV.koa())
 
 app.use(bodyParser())
 
-router.get('/', async (ctx) => {
-  ctx.state.currentTime = new Date()
-  await ctx.render('./index.ejs')
-})
-
 // 可以将一类的路由单独保存在一个文件中
-app.use(require('./routes/todos').routes())
+app.use(require('./routes/hello-world').routes())
 
 module.exports = app

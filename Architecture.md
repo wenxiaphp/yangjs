@@ -44,6 +44,33 @@
 
 ## 二、客户端架构
 
-参考：[基于 vue cli 3 的微信公众号前端架构](http://t.cn/EbXMd8G)
+参考：[基于 vue cli 3 的微信公众号前端架构](http://t.cn/EbXMd8G)。构建好之后全部代码放在 `/client` 目录下。
 
 ## 三、集成部署
+
+### 删除服务端渲染相关文件及配置
+
+1. 删除 `/server/public` 文件夹及其依赖
+2. 删除 `/server/views` 文件夹及其依赖
+
+### 测试接口
+
+#### 1、在 `/server/routes/` 中新建 `hello-world.js` 写入
+
+```js
+const Router = require('koa-router')
+
+const router = new Router({ prefix: '/hello-world' })
+
+router.get('/', async (ctx) => {
+  ctx.body = 'Hello World'
+})
+module.exports = router
+```
+
+#### 2、在 `app.js` 注册路由
+
+```js
+// 可以将一类的路由单独保存在一个文件中
+app.use(require('./routes/hello-world').routes())
+```
