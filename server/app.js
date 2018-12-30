@@ -15,7 +15,7 @@ const router = new Router()
 app.use(AV.Cloud.CookieSession({ framework: 'koa', secret: 'my secret', maxAge: 3600000, fetchUser: true }))
 
 // 设置静态资源目录
-app.use(statics(path.join(__dirname, '../client/dist')))
+app.use(statics(path.join(__dirname, 'public')))
 
 // 加载云引擎中间件
 app.use(AV.koa())

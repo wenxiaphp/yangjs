@@ -8,7 +8,7 @@
   "scripts": {
     "postinstall": "yarn build",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest ../server/public/wx",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },

@@ -54,6 +54,7 @@
 
 1. 删除 `/server/public` 文件夹及其依赖
 2. 删除 `/server/views` 文件夹及其依赖
+3. 修改客户端构建命令：`"build": "vue-cli-service build --dest ../server/public/wx"`
 
 ### 测试接口
 

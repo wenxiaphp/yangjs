@@ -8,7 +8,7 @@
     "up": "lean up --port 3300",
     "fix": "eslint --fix ./",
     "lint": "eslint lint ./",
-    "start": "node server.js && yarn build-client",
+    "start": "node server.js",
     "dev": "nodemon server.js -- ",
     "build-client": "cd ./client && yarn install"
   },
